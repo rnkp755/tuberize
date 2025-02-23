@@ -1,0 +1,26 @@
+{
+    "name": "tuberize-service",
+    "version": "1.0.0",
+    "description": "This is a helper service for Tuberize app. Turning Your YouTube into a Brand",
+    "keywords": [
+        "youtube",
+        "tuberize"
+    ],
+    "license": "ISC",
+    "author": "Raushan Kumar Thakur",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.22.0",
+        "axios": "^1.7.9",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "mongoose": "^8.10.1"
+    },
+    "devDependencies": {
+        "prettier": "^3.5.2"
+    }
+}
