@@ -8,7 +8,7 @@ export default async function Page() {
 	return (
 		<div>
 			<SignOut />
-			<pre>{JSON.stringify(session, null, 2)}</pre>
+			<p>{JSON.stringify(session, null, 2)}</p>
 		</div>
 	);
 }
