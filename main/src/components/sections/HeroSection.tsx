@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "../index.js";
 import AnimatedGradient from "../animations/AnimatedGradient";
 
-console.log("AnnimatedGradient", AnimatedGradient);
-console.log("Framer Motion", motion);
-
 const HeroSection = () => {
 	return (
 		<section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
