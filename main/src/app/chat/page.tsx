@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { SignOut } from "@/components/signout-button";
+import { SignOut } from "@/components/micros/signout-button";
 
 export default async function Page() {
 	const session = await auth();

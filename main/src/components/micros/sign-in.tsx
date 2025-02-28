@@ -6,7 +6,9 @@ export default function SignIn() {
 			<form
 				action={async () => {
 					"use server";
-					await signIn("google", { redirectTo: "/chat" });
+					await signIn("google", {
+						redirectTo: "/details",
+					});
 				}}
 			>
 				<button type="submit">Signin with Google</button>
@@ -14,10 +16,22 @@ export default function SignIn() {
 			<form
 				action={async () => {
 					"use server";
-					await signIn("github", { redirectTo: "/chat" });
+					await signIn("github", {
+						redirectTo: "/details",
+					});
 				}}
 			>
 				<button type="submit">Signin with GitHub</button>
+			</form>
+			<form
+				action={async () => {
+					"use server";
+					await signIn("spotify", {
+						redirectTo: "/details",
+					});
+				}}
+			>
+				<button type="submit">Signin with Spotify</button>
 			</form>
 		</div>
 	);
