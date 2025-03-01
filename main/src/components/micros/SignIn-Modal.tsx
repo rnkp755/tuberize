@@ -1,18 +1,10 @@
-"use client";
-
-import { useRouter } from "next/navigation";
 import { handleSignIn } from "@/actions/authActions";
 import { X, Github } from "lucide-react";
 import { Button } from "../index.js";
 import { motion, AnimatePresence } from "framer-motion";
+import { SignInModalProps } from "@/types.js";
 
-const SignInModal = () => {
-	const router = useRouter();
-
-	const handleClose = () => {
-		router.push("/");
-	};
-
+const SignInModal = ({ onClose }: SignInModalProps) => {
 	return (
 		<AnimatePresence>
 			{/* Backdrop */}
@@ -21,7 +13,7 @@ const SignInModal = () => {
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50"
-				onClick={() => handleClose()}
+				onClick={onClose}
 			>
 				<motion.div
 					initial={{ opacity: 0, scale: 0.95 }}
@@ -36,7 +28,7 @@ const SignInModal = () => {
 				>
 					{/* Close button */}
 					<button
-						onClick={() => handleClose()}
+						onClick={onClose}
 						className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
 						aria-label="Close"
 					>
