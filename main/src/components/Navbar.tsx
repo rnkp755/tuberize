@@ -4,8 +4,9 @@ import { Button } from "./index";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import App from "@/constants";
+import { NavbarProps } from "@/types";
 
-const Navbar = () => {
+const Navbar = ({ userProfile, isLoggedIn }: NavbarProps) => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -62,9 +63,13 @@ const Navbar = () => {
 					>
 						Pricing
 					</a>
-					<Button asChild>
-						<Link href="#login">Get Started</Link>
-					</Button>
+					{isLoggedIn ? (
+						userProfile
+					) : (
+						<Button asChild>
+							<Link href="#login">Get Started</Link>
+						</Button>
+					)}
 				</div>
 
 				{/* Mobile Menu Button */}
@@ -106,17 +111,15 @@ const Navbar = () => {
 							Pricing
 						</a>
 						<div className="flex flex-col gap-2 pt-2">
-							<Button
-								asChild
-								className="w-full"
-								onClick={() =>
-									setIsMenuOpen(false)
-								}
-							>
-								<Link href="#login">
-									Get Started
-								</Link>
-							</Button>
+							{isLoggedIn ? (
+								userProfile
+							) : (
+								<Button asChild>
+									<Link href="#login">
+										Get Started
+									</Link>
+								</Button>
+							)}
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,13 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 
-export async function handleSignIn(provider: string) {
+async function handleSignIn(provider: string) {
 	await signIn(provider, { redirectTo: "/details" });
 }
+
+async function handleSignOut() {
+	await signOut({ redirectTo: "/" });
+}
+
+export { handleSignIn, handleSignOut };
