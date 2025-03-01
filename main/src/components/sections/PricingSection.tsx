@@ -9,9 +9,9 @@ const PricingSection = () => {
 
 	const plans = [
 		{
-			name: "Basic",
+			name: "Starter",
 			description: "Perfect for getting started",
-			price: isAnnual ? 9 : 12,
+			price: isAnnual ? 0 : 0,
 			features: [
 				"Custom portfolio website",
 				"Connect your YouTube channel",
@@ -25,7 +25,7 @@ const PricingSection = () => {
 		{
 			name: "Pro",
 			description: "Most popular for creators",
-			price: isAnnual ? 19 : 24,
+			price: isAnnual ? 150 : 180,
 			features: [
 				"Everything in Basic",
 				"Blog section with CMS",
@@ -41,7 +41,7 @@ const PricingSection = () => {
 		{
 			name: "Business",
 			description: "For professional creators",
-			price: isAnnual ? 49 : 59,
+			price: isAnnual ? 500 : 600,
 			features: [
 				"Everything in Pro",
 				"Multiple portfolio pages",
@@ -52,12 +52,12 @@ const PricingSection = () => {
 				"Dedicated support",
 			],
 			highlighted: false,
-			cta: "Contact Sales",
+			cta: "Get Started",
 		},
 	];
 
 	return (
-		<section id="pricing" className="py-20 md:py-32 bg-background">
+		<section id="pricing" className="pt-20 md:pt-32 bg-background">
 			<div className="container mx-auto px-4 md:px-6">
 				<AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
 					<h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -130,7 +130,7 @@ const PricingSection = () => {
 
 								<div className="mb-6">
 									<span className="text-4xl font-bold">
-										${plan.price}
+										₹{plan.price}
 									</span>
 									<span className="text-muted-foreground">
 										/month
@@ -193,8 +193,7 @@ const PricingSection = () => {
 						</AnimatedSection>
 					))}
 				</div>
-
-				<AnimatedSection
+				{/* <AnimatedSection
 					delay={0.3}
 					className="mt-12 text-center text-muted-foreground"
 				>
@@ -202,7 +201,7 @@ const PricingSection = () => {
 						All plans include a 14-day free trial. No
 						credit card required to start.
 					</p>
-				</AnimatedSection>
+				</AnimatedSection> */}
 			</div>
 		</section>
 	);

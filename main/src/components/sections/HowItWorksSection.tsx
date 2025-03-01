@@ -2,34 +2,8 @@
 
 import { motion } from "framer-motion";
 import { AnimatedSection } from "../index.js";
-import { Monitor, Upload, Cpu, Sliders, ArrowRight } from "lucide-react";
-
-const steps = [
-	{
-		icon: <Upload className="w-6 h-6" />,
-		title: "Connect Your Channel",
-		description:
-			"Link your YouTube channel with a single click. We'll securely access your content for analysis.",
-	},
-	{
-		icon: <Cpu className="w-6 h-6" />,
-		title: "AI Content Analysis",
-		description:
-			"Our AI analyzes your videos, style, and branding to create a personalized portfolio design.",
-	},
-	{
-		icon: <Sliders className="w-6 h-6" />,
-		title: "Customize Your Site",
-		description:
-			"Choose sections, layouts, and color schemes that match your personal brand and content style.",
-	},
-	{
-		icon: <Monitor className="w-6 h-6" />,
-		title: "Deploy & Share",
-		description:
-			"Publish your portfolio instantly and start sharing it with your audience and potential partners.",
-	},
-];
+import { ArrowRight } from "lucide-react";
+import App from "@/constants";
 
 const HowItWorksSection = () => {
 	return (
@@ -44,18 +18,18 @@ const HowItWorksSection = () => {
 					<h2 className="text-3xl md:text-4xl font-bold mb-6">
 						How{" "}
 						<span className="text-gradient">
-							YoutubeStitch
+							{App.name}
 						</span>{" "}
 						Works
 					</h2>
 					<p className="text-xl text-muted-foreground">
-						From YouTube to stunning portfolio in four
-						simple steps
+						From social media content to stunning
+						portfolio in four simple steps
 					</p>
 				</AnimatedSection>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
-					{steps.map((step, index) => (
+					{App.steps.map((step, index) => (
 						<AnimatedSection
 							key={index}
 							delay={index * 0.1}
@@ -64,7 +38,7 @@ const HowItWorksSection = () => {
 							<div className="bg-secondary/40 rounded-xl p-6 md:p-8 h-full border border-border hover:border-primary/50 transition-colors group">
 								<div className="absolute -right-3 top-1/2 transform -translate-y-1/2 text-primary/40 hidden md:block">
 									{index <
-										steps.length -
+										App.steps.length -
 											1 && (
 										<ArrowRight
 											size={24}
@@ -88,29 +62,6 @@ const HowItWorksSection = () => {
 						</AnimatedSection>
 					))}
 				</div>
-
-				<AnimatedSection
-					delay={0.2}
-					className="mt-20 md:mt-24 text-center"
-				>
-					<div className="bg-secondary/50 glass p-8 md:p-12 rounded-2xl max-w-4xl mx-auto border border-border">
-						<h3 className="text-2xl md:text-3xl font-bold mb-6">
-							Ready to showcase your content?
-						</h3>
-						<p className="text-xl text-muted-foreground mb-8">
-							Join thousands of content creators who
-							have elevated their online presence
-							with YoutubeStitch.
-						</p>
-						<motion.button
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.98 }}
-							className="px-8 py-3 rounded-full bg-primary text-white font-medium text-lg transition-all"
-						>
-							Get Started Today
-						</motion.button>
-					</div>
-				</AnimatedSection>
 			</div>
 		</section>
 	);

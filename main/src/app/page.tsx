@@ -1,4 +1,5 @@
 import {
+	SignInModal,
 	HeroSection,
 	FeaturesSection,
 	HowItWorksSection,
@@ -9,6 +10,7 @@ import {
 export default function Home() {
 	return (
 		<main>
+			<SignInModal />
 			<HeroSection />
 			<FeaturesSection />
 			<HowItWorksSection />

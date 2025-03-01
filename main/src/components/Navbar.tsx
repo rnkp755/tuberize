@@ -1,7 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./index";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import App from "@/constants";
 
 const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -32,11 +34,11 @@ const Navbar = () => {
 				<div className="flex items-center gap-2">
 					<div className="h-9 w-9 rounded-full bg-primary flex items-center justify-center">
 						<span className="text-white font-bold text-xl">
-							Y
+							T
 						</span>
 					</div>
 					<span className="font-bold text-xl">
-						YoutubeStitch
+						{App.name}
 					</span>
 				</div>
 
@@ -60,10 +62,9 @@ const Navbar = () => {
 					>
 						Pricing
 					</a>
-					<Button variant="outline" className="mr-2">
-						Sign In
+					<Button asChild>
+						<Link href="#login">Get Started</Link>
 					</Button>
-					<Button>Get Started</Button>
 				</div>
 
 				{/* Mobile Menu Button */}
@@ -106,13 +107,15 @@ const Navbar = () => {
 						</a>
 						<div className="flex flex-col gap-2 pt-2">
 							<Button
-								variant="outline"
+								asChild
 								className="w-full"
+								onClick={() =>
+									setIsMenuOpen(false)
+								}
 							>
-								Sign In
-							</Button>
-							<Button className="w-full">
-								Get Started
+								<Link href="#login">
+									Get Started
+								</Link>
 							</Button>
 						</div>
 					</div>

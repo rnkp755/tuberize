@@ -1,6 +1,8 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+import SignInModal from "./micros/SignIn-Modal";
+
 import HeroSection from "./sections/HeroSection";
 import FeaturesSection from "./sections/FeaturesSection";
 import HowItWorksSection from "./sections/HowItWorksSection";
@@ -15,6 +17,7 @@ import FadeInStagger, { FadeInStaggerItem } from "./animations/FadeInStagger";
 
 export {
 	Navbar,
+	SignInModal,
 	HeroSection,
 	FeaturesSection,
 	HowItWorksSection,
