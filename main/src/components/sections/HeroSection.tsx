@@ -48,7 +48,7 @@ const HeroSection = () => {
 								size="lg"
 								className="px-8 text-base"
 							>
-								<Link href="#login">
+								<Link href="/login">
 									Get Started
 								</Link>
 							</Button>

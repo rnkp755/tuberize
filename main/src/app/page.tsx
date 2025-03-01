@@ -1,5 +1,5 @@
+"use client";
 import {
-	SignInModal,
 	HeroSection,
 	FeaturesSection,
 	HowItWorksSection,
@@ -7,10 +7,10 @@ import {
 	PricingSection,
 	CTASection,
 } from "@/components/index.js";
+
 export default function Home() {
 	return (
 		<main>
-			<SignInModal />
 			<HeroSection />
 			<FeaturesSection />
 			<HowItWorksSection />

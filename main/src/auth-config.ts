@@ -6,9 +6,9 @@ import type { NextAuthConfig } from "next-auth";
 // Notice this is only an object, not a full Auth.js instance
 export default {
 	providers: [GitHub, Google, Spotify],
-	// pages: {
-	// 	signIn: "/signin",
-	// },
+	pages: {
+		signIn: "/login",
+	},
 	callbacks: {
 		async authorized({ auth, request: { nextUrl } }) {
 			const isAuthorized = !!auth?.user;

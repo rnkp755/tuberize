@@ -10,3 +10,7 @@ export interface NavbarProps {
 	userProfile: ReactNode | null;
 	isLoggedIn: boolean;
 }
+
+export interface SignInModalProps {
+	onClose: () => void; // Function type
+}

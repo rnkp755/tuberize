@@ -24,7 +24,7 @@ const CTASection = () => {
 						whileTap={{ scale: 0.98 }}
 						className="px-6 py-3 rounded-lg bg-primary text-white font-medium transition-all"
 					>
-						<Link href={"#login"}>
+						<Link href={"/login"}>
 							Get Started for Free
 						</Link>
 					</motion.button>

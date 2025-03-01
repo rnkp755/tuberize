@@ -67,7 +67,7 @@ const Navbar = ({ userProfile, isLoggedIn }: NavbarProps) => {
 						userProfile
 					) : (
 						<Button asChild>
-							<Link href="#login">Get Started</Link>
+							<Link href="/login">Get Started</Link>
 						</Button>
 					)}
 				</div>
@@ -115,7 +115,7 @@ const Navbar = ({ userProfile, isLoggedIn }: NavbarProps) => {
 								userProfile
 							) : (
 								<Button asChild>
-									<Link href="#login">
+									<Link href="/login">
 										Get Started
 									</Link>
 								</Button>
