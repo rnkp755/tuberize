@@ -22,7 +22,7 @@ export default function Home() {
 
 	const handleClose = () => {
 		setIsModalOpen(false);
-		router.push("/");
+		router.replace("/");
 	};
 
 	return (

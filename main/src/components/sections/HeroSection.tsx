@@ -56,8 +56,8 @@ const HeroSection = () => {
 					</motion.div>
 				</div>
 
-				<div className="mt-20 text-center">
-					<p className="text-sm uppercase tracking-wider text-muted-foreground mb-6">
+				<div className="mt-36 text-center">
+					<p className="text-sm uppercase tracking-wider text-muted-foreground mb-6 ">
 						Trusted by content creators from
 					</p>
 					<div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">

@@ -1,15 +1,20 @@
-import { auth } from "@/auth";
-import { SignOut } from "@/components/index.js";
+import { ChannelDetailForm } from "@/components";
+import { channelDetailsFormdata } from "@/types";
+
+async function handleChannelDetailsForm(data: channelDetailsFormdata) {
+	"use server";
+	console.log(data);
+	setTimeout(() => {
+		console.log("Data saved");
+	}, 2000);
+}
 
 export default async function Details() {
-	const session = await auth();
-	if (!session) return <div>Not authenticated</div>;
-
 	return (
-		<div className="pt-24 px-24">
-			<SignOut />
-			{/* <UserAvatar /> */}
-			<p>{JSON.stringify(session, null, 2)}</p>
+		<div className="pt-32 pb-24 px-24 flex justify-center items-center">
+			<ChannelDetailForm
+				handleChannelDetailsForm={handleChannelDetailsForm}
+			/>
 		</div>
 	);
 }
