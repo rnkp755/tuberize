@@ -3,12 +3,20 @@ import { APIError } from "../utils/APIError.js";
 import { asyncHandler } from "../utils/AsyncHandler.js";
 import { Blog } from "../models/blog.model.js";
 
+const defaultThumbnail =
+    "https://res.cloudinary.com/hackerraushan/image/upload/c_thumb,w_200,g_face/v1710073871/gwugsjqp7jeoxlq3geh7.jpg";
+
 const addBlog = asyncHandler(async (req, res) => {
-    const { channelId, title, content } = req.body;
+    const {
+        channelId,
+        title,
+        thumbnail = defaultThumbnail,
+        content,
+    } = req.body;
     if (!channelId || !title || !content) {
         throw new APIError(400, "Channel ID, title and content are required");
     }
-    const blog = new Blog({ channelId, title, content });
+    const blog = new Blog({ channelId, title, thumbnail, content });
     await blog.save();
     return res
         .status(201)

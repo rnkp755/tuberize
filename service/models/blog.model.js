@@ -8,6 +8,11 @@ const blogScehma = new Schema(
             required: true,
             index: true,
         },
+        thumbnail: {
+            type: String,
+            required: true,
+            trim: true,
+        },
         title: {
             type: String,
             required: true,
