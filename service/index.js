@@ -21,5 +21,7 @@ connectDB()
 
 // Routes
 import router from "./routes/channelData.route.js";
+import blogRouter from "./routes/blog.route.js";
 
 app.use("/api/v1", router);
+app.use("/api/v1/blog", blogRouter);
